@@ -16,5 +16,10 @@ namespace Projekt_zeleznik
         {
             InitializeComponent();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            userLabel.Text = "Pozdravljen " + Prijava.user.ToString() + "!";
+        }
     }
 }
