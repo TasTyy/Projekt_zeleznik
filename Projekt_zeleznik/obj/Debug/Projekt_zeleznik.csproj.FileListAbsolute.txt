@@ -1,0 +1,17 @@
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\Projekt_zeleznik.exe.config
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\Projekt_zeleznik.exe
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\Projekt_zeleznik.pdb
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Prijava.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Registracija.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Properties.Resources.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csproj.GenerateResource.cache
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csproj.CoreCompileInputs.cache
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.exe
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.pdb
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\Google.Protobuf.dll
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\MySql.Data.dll
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\Google.Protobuf.xml
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\MySql.Data.xml
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csproj.CopyComplete
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Main.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csprojAssemblyReference.cache
