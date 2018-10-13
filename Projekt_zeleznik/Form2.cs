@@ -13,7 +13,7 @@ namespace Projekt_zeleznik
 {
     public partial class Registracija : Form
     {
-        string dbConnectionString = ("data source = Server=sql7.freemysqlhosting.net; Database=sql7259467; User Id=sql7259467; Password=GTEXuXUUmH;");
+        string dbConnectionString = "data source=mysql6001.site4now.net; username=a4195e_darila; password=M4jN3j4K0r3n; persistsecurityinfo=True; database=db_a4195e_darila; SslMode=none";
 
         public Registracija()
         {
@@ -22,10 +22,33 @@ namespace Projekt_zeleznik
 
         private void registracijaButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection myConnection = new MySqlConnection(dbConnectionString);
-            myConnection.Open();
+            MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            conn.Open();
 
-            string query = "INSERT INTO Uporabniki (upor_ime, geslo) VALUES ('" + textBox1 + "', '" + textBox2 + "');";
+            string query = "SELECT * FROM uporabniki WHERE upor_ime = '" + uporImeTextBox.Text + "' AND geslo = '" + gesloTextBox.Text + "';";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            MySqlDataReader reader = comm.ExecuteReader();
+
+            int st = 0;
+            while (reader.Read())
+            {
+                st++;
+            }
+            if (st > 0)
+            {
+                MessageBox.Show("Uporabniško ime že obstaja!");
+            }
+            else
+            {
+                string insert = "INSERT INTO uporabniki (upor_ime, geslo) VALUES ('" + uporImeTextBox.Text + "', '" + gesloTextBox.Text + "');";
+                MySqlCommand command = new MySqlCommand(insert, conn);
+                reader.Close();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Uporabnik uspešno kreiran!");
+                this.Close();
+                Prijava p = new Prijava();
+                p.Show();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

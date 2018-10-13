@@ -33,8 +33,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.uporImeTextBox = new System.Windows.Forms.TextBox();
+            this.gesloTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.registracijaButton = new System.Windows.Forms.Button();
@@ -96,21 +96,21 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Registracija";
             // 
-            // textBox1
+            // uporImeTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(340, 260);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 29);
-            this.textBox1.TabIndex = 16;
+            this.uporImeTextBox.Location = new System.Drawing.Point(340, 260);
+            this.uporImeTextBox.Multiline = true;
+            this.uporImeTextBox.Name = "uporImeTextBox";
+            this.uporImeTextBox.Size = new System.Drawing.Size(157, 29);
+            this.uporImeTextBox.TabIndex = 16;
             // 
-            // textBox2
+            // gesloTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(340, 321);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 29);
-            this.textBox2.TabIndex = 17;
+            this.gesloTextBox.Location = new System.Drawing.Point(340, 321);
+            this.gesloTextBox.Multiline = true;
+            this.gesloTextBox.Name = "gesloTextBox";
+            this.gesloTextBox.Size = new System.Drawing.Size(157, 29);
+            this.gesloTextBox.TabIndex = 17;
             // 
             // label2
             // 
@@ -160,8 +160,8 @@
             this.Controls.Add(this.registracijaButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.gesloTextBox);
+            this.Controls.Add(this.uporImeTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -181,8 +181,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox uporImeTextBox;
+        private System.Windows.Forms.TextBox gesloTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button registracijaButton;

@@ -43,12 +43,12 @@ namespace Projekt_zeleznik
 
             string query = "SELECT * FROM uporabniki WHERE upor_ime = '" + uporImeTextBox.Text + "' AND geslo = '" + gesloTextBox.Text + "';";
             MySqlCommand comm = new MySqlCommand(query, conn);
-            MySqlDataReader baza = comm.ExecuteReader();
+            MySqlDataReader reader = comm.ExecuteReader();
 
             int st = 0;
-            while (baza.Read())
+            while (reader.Read())
             {
-                user = baza["upor_ime"].ToString();
+                user = reader["upor_ime"].ToString();
                 st++;
             }
             if (st == 1)
