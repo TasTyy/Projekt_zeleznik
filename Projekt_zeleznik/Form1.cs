@@ -16,6 +16,7 @@ namespace Projekt_zeleznik
         //string dbConnectionString= "data source=sql7.freemysqlhosting.net; username=sql7259467; password=GTEXuXUUmH database=sql7259467;SslMode=none;";
         string dbConnectionString = "data source=mysql6001.site4now.net; username=a4195e_darila; password=M4jN3j4K0r3n; persistsecurityinfo=True; database=db_a4195e_darila; SslMode=none";
         public static string user = "";
+        public static string userID;
 
         public Prijava()
         {
@@ -48,6 +49,7 @@ namespace Projekt_zeleznik
             int st = 0;
             while (reader.Read())
             {
+                userID = reader["id_u"].ToString(); 
                 user = reader["upor_ime"].ToString();
                 st++;
             }
