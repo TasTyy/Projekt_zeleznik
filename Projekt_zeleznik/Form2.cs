@@ -40,9 +40,9 @@ namespace Projekt_zeleznik
             }
             else
             {
+                reader.Close();
                 string insert = "INSERT INTO uporabniki (upor_ime, geslo) VALUES ('" + uporImeTextBox.Text + "', '" + gesloTextBox.Text + "');";
                 MySqlCommand command = new MySqlCommand(insert, conn);
-                reader.Close();
                 command.ExecuteNonQuery();
                 MessageBox.Show("Uporabnik uspešno kreiran!");
                 this.Close();
