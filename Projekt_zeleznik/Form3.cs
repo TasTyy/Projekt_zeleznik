@@ -68,6 +68,8 @@ namespace Projekt_zeleznik
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //prikaze podate v bazi
+
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
             listView1.View = View.Details;
@@ -84,15 +86,6 @@ namespace Projekt_zeleznik
                 listitem.SubItems.Add(dr["upor_ime"].ToString());
                 listView1.Items.Add(listitem);
             }
-            /*
-            string darila = "SELECT d.datum, d.opis, v.vrsta, u.ime FROM darila d INNER JOIN uporabniki u ON d.id_u = u.id_u INNER JOIN vrste_daril v ON d.id_v = id_v";
-            MySqlCommand command = new MySqlCommand(darila, conn);
-            MySqlDataReader read = command.ExecuteReader();
-            while (read.Read())
-            {
-                listView1.
-            }
-            */
         }
     }
 }
