@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userLabel = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Vrsta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Opis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Uporabnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +42,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Ibriši = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // userLabel
@@ -67,39 +70,27 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // Vrsta
             // 
             this.Vrsta.Text = "Vrsta";
-            this.Vrsta.Width = 100;
+            this.Vrsta.Width = 80;
             // 
             // Datum
             // 
             this.Datum.Text = "Datum";
-            this.Datum.Width = 100;
+            this.Datum.Width = 155;
             // 
             // Opis
             // 
             this.Opis.Text = "Opis";
-            this.Opis.Width = 250;
+            this.Opis.Width = 275;
             // 
             // Uporabnik
             // 
             this.Uporabnik.Text = "Uporabnik";
-            this.Uporabnik.Width = 100;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Darila",
-            "Komentarji",
-            "Ocene"});
-            this.comboBox1.Location = new System.Drawing.Point(937, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Uporabnik.Width = 88;
             // 
             // button1
             // 
@@ -166,6 +157,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Ibriši});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            // 
+            // Ibriši
+            // 
+            this.Ibriši.Name = "Ibriši";
+            this.Ibriši.Size = new System.Drawing.Size(104, 22);
+            this.Ibriši.Text = "Izbriši";
+            this.Ibriši.Click += new System.EventHandler(this.Ibriši_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,12 +183,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.userLabel);
             this.Name = "Main";
             this.Text = "Slaboooo";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +198,6 @@
 
         private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
@@ -205,5 +209,7 @@
         private System.Windows.Forms.ColumnHeader Opis;
         private System.Windows.Forms.ColumnHeader Uporabnik;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem Ibriši;
     }
 }

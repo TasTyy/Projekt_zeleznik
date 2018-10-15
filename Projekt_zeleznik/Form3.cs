@@ -58,11 +58,9 @@ namespace Projekt_zeleznik
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
 
-            string query = "INSERT INTO darila (datum, opis, id_u, id_v) VALUES ('" + DateTime.Now.ToString() + "', '" + textBox3.Text + "', (SELECT MAX(id_u) FROM uporabniki WHERE ('" + Prijava.userID.ToString() + "')), (SELECT MAX(id_v) FROM vrste_daril WHERE ('" + comboBox2.GetItemText(comboBox2.SelectedItem) + "')));";
+            string query = "INSERT INTO darila (datum, opis, id_u, id_v) VALUES ('" + DateTime.Now.ToString() + "', '" + textBox3.Text + "', (SELECT id_u FROM uporabniki WHERE id_u = '" + Prijava.userID.ToString() + "'), (SELECT id_v FROM vrste_daril WHERE vrsta = '" + comboBox2.GetItemText(comboBox2.SelectedItem) + "'));";
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.ExecuteNonQuery();
-
-            comboBox2.Items.Clear();
             textBox3.Clear();
         }
 
@@ -76,6 +74,7 @@ namespace Projekt_zeleznik
             MySqlDataAdapter ada = new MySqlDataAdapter("SELECT v.vrsta, d.datum, d.opis, u.upor_ime FROM vrste_daril v INNER JOIN darila d ON d.id_v = v.id_v INNER JOIN uporabniki u ON d.id_u = u.id_u", conn);
             DataTable dt = new DataTable();
             ada.Fill(dt);
+            listView1.Items.Clear();
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -86,6 +85,30 @@ namespace Projekt_zeleznik
                 listitem.SubItems.Add(dr["upor_ime"].ToString());
                 listView1.Items.Add(listitem);
             }
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (listView1.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void Ibriši_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            conn.Open();
+
+            string query = "DELETE FROM darila WHERE (vrsta = '" + listView1.SelectedItems[0].Text + "') AND (datum = '" + listView1.SelectedItems[1].Text + "'), AND id_v";
         }
     }
 }
