@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.userLabel = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Vrsta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Opis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Uporabnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +39,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Ibriši = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Vrsta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Opis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Uporabnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,41 +57,6 @@
             this.userLabel.Size = new System.Drawing.Size(58, 22);
             this.userLabel.TabIndex = 0;
             this.userLabel.Text = "label1";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Vrsta,
-            this.Datum,
-            this.Opis,
-            this.Uporabnik});
-            this.listView1.Location = new System.Drawing.Point(295, 59);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(611, 499);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
-            // 
-            // Vrsta
-            // 
-            this.Vrsta.Text = "Vrsta";
-            this.Vrsta.Width = 80;
-            // 
-            // Datum
-            // 
-            this.Datum.Text = "Datum";
-            this.Datum.Width = 155;
-            // 
-            // Opis
-            // 
-            this.Opis.Text = "Opis";
-            this.Opis.Width = 275;
-            // 
-            // Uporabnik
-            // 
-            this.Uporabnik.Text = "Uporabnik";
-            this.Uporabnik.Width = 88;
             // 
             // button1
             // 
@@ -149,7 +115,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(831, 564);
+            this.button2.Location = new System.Drawing.Point(831, 547);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
@@ -171,11 +137,52 @@
             this.Ibriši.Text = "Izbriši";
             this.Ibriši.Click += new System.EventHandler(this.Ibriši_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Vrsta,
+            this.Datum,
+            this.Opis,
+            this.Uporabnik});
+            this.listView1.Location = new System.Drawing.Point(303, 67);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(603, 474);
+            this.listView1.TabIndex = 12;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 28;
+            // 
+            // Vrsta
+            // 
+            this.Vrsta.Text = "Vrsta";
+            this.Vrsta.Width = 55;
+            // 
+            // Datum
+            // 
+            this.Datum.Text = "Datum";
+            this.Datum.Width = 129;
+            // 
+            // Opis
+            // 
+            this.Opis.Text = "Opis";
+            this.Opis.Width = 266;
+            // 
+            // Uporabnik
+            // 
+            this.Uporabnik.Text = "Uporabnik";
+            this.Uporabnik.Width = 123;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 612);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
@@ -183,7 +190,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.userLabel);
             this.Name = "Main";
             this.Text = "Slaboooo";
@@ -197,19 +203,20 @@
         #endregion
 
         private System.Windows.Forms.Label userLabel;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem Ibriši;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Vrsta;
         private System.Windows.Forms.ColumnHeader Datum;
         private System.Windows.Forms.ColumnHeader Opis;
         private System.Windows.Forms.ColumnHeader Uporabnik;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem Ibriši;
     }
 }

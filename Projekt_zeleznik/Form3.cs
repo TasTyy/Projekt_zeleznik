@@ -71,7 +71,7 @@ namespace Projekt_zeleznik
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
             listView1.View = View.Details;
-            MySqlDataAdapter ada = new MySqlDataAdapter("SELECT v.vrsta, d.datum, d.opis, u.upor_ime FROM vrste_daril v INNER JOIN darila d ON d.id_v = v.id_v INNER JOIN uporabniki u ON d.id_u = u.id_u", conn);
+            MySqlDataAdapter ada = new MySqlDataAdapter("SELECT id_d, v.vrsta, d.datum, d.opis, u.upor_ime FROM vrste_daril v INNER JOIN darila d ON d.id_v = v.id_v INNER JOIN uporabniki u ON d.id_u = u.id_u", conn);
             DataTable dt = new DataTable();
             ada.Fill(dt);
             listView1.Items.Clear();
@@ -79,7 +79,8 @@ namespace Projekt_zeleznik
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["vrsta"].ToString());
+                ListViewItem listitem = new ListViewItem(dr["id_d"].ToString());
+                listitem.SubItems.Add(dr["vrsta"].ToString());
                 listitem.SubItems.Add(dr["datum"].ToString());
                 listitem.SubItems.Add(dr["opis"].ToString());
                 listitem.SubItems.Add(dr["upor_ime"].ToString());
@@ -108,7 +109,21 @@ namespace Projekt_zeleznik
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
 
-            string query = "DELETE FROM darila WHERE (vrsta = '" + listView1.SelectedItems[0].Text + "') AND (datum = '" + listView1.SelectedItems[1].Text + "'), AND id_v";
+            string query = "DELETE FROM darila WHERE id_u = (SELECT id_u FROM uporabniki WHERE id_u = '" + listView1.SelectedItems[4].Text + "')";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            comm.ExecuteNonQuery();
+            string query1 = "DELETE FROM darila WHERE id_v = (SELECT id_v FROM vrste_daril WHERE id_v = '" + listView1.SelectedItems[1].Text + "')";
+            MySqlCommand comm1 = new MySqlCommand(query1, conn);
+            comm1.ExecuteNonQuery();
+            string query4 = "DELETE FROM darila WHERE opis = '" + listView1.SelectedItems[3].Text + "')";
+            MySqlCommand comm4 = new MySqlCommand(query4, conn);
+            comm4.ExecuteNonQuery();
+            string query2 = "DELETE FROM darila WHERE datum = '" + listView1.SelectedItems[2].Text + "')";
+            MySqlCommand comm2 = new MySqlCommand(query2, conn);
+            comm2.ExecuteNonQuery();
+            string query3 = "DELETE FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "')";
+            MySqlCommand comm3 = new MySqlCommand(query3, conn);
+            comm3.ExecuteNonQuery();
         }
     }
 }
