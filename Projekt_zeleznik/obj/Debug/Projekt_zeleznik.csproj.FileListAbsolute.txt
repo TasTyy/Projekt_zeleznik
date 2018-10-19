@@ -15,3 +15,4 @@ C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\bin\Debug\MySql.D
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csproj.CopyComplete
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Main.resources
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csprojAssemblyReference.cache
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Uredi.resources

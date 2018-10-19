@@ -14,6 +14,10 @@ namespace Projekt_zeleznik
     public partial class Main : Form
     {
         string dbConnectionString = "data source=mysql6001.site4now.net; username=a4195e_darila; password=M4jN3j4K0r3n; persistsecurityinfo=True; database=db_a4195e_darila; SslMode=none";
+        public static string dariloID;
+        public static string datum;
+        public static string opis;
+        public static string uporabnik;
 
         public Main()
         {
@@ -109,21 +113,31 @@ namespace Projekt_zeleznik
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
 
-            string query = "DELETE FROM darila WHERE id_u = (SELECT id_u FROM uporabniki WHERE id_u = '" + listView1.SelectedItems[4].Text + "')";
+            string query = "DELETE FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "'";
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.ExecuteNonQuery();
-            string query1 = "DELETE FROM darila WHERE id_v = (SELECT id_v FROM vrste_daril WHERE id_v = '" + listView1.SelectedItems[1].Text + "')";
-            MySqlCommand comm1 = new MySqlCommand(query1, conn);
-            comm1.ExecuteNonQuery();
-            string query4 = "DELETE FROM darila WHERE opis = '" + listView1.SelectedItems[3].Text + "')";
-            MySqlCommand comm4 = new MySqlCommand(query4, conn);
-            comm4.ExecuteNonQuery();
-            string query2 = "DELETE FROM darila WHERE datum = '" + listView1.SelectedItems[2].Text + "')";
-            MySqlCommand comm2 = new MySqlCommand(query2, conn);
-            comm2.ExecuteNonQuery();
-            string query3 = "DELETE FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "')";
-            MySqlCommand comm3 = new MySqlCommand(query3, conn);
-            comm3.ExecuteNonQuery();
+        }
+
+        private void urediToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            conn.Open();
+
+            string query = "SELECT * FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "'";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            MySqlDataReader reader = comm.ExecuteReader();
+
+            while (reader.Read())
+            {
+                dariloID = reader.GetString(0);
+                datum = reader.GetString(1);
+                opis = reader.GetString(2);
+                //uporabnik = reader.GetString(3);
+
+            }
+
+            Uredi u = new Uredi();
+            u.Show();
         }
     }
 }

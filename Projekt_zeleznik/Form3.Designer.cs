@@ -45,6 +45,7 @@
             this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Opis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Uporabnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,9 +127,10 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Ibriši});
+            this.Ibriši,
+            this.urediToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 48);
             // 
             // Ibriši
             // 
@@ -151,6 +153,7 @@
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // ID
             // 
@@ -177,6 +180,13 @@
             this.Uporabnik.Text = "Uporabnik";
             this.Uporabnik.Width = 123;
             // 
+            // urediToolStripMenuItem
+            // 
+            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
+            this.urediToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.urediToolStripMenuItem.Text = "Uredi";
+            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +202,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.userLabel);
             this.Name = "Main";
-            this.Text = "Slaboooo";
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -218,5 +228,6 @@
         private System.Windows.Forms.ColumnHeader Datum;
         private System.Windows.Forms.ColumnHeader Opis;
         private System.Windows.Forms.ColumnHeader Uporabnik;
+        private System.Windows.Forms.ToolStripMenuItem urediToolStripMenuItem;
     }
 }
