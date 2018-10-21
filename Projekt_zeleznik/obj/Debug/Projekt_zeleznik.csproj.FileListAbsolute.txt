@@ -16,3 +16,5 @@ C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Main.resources
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.csprojAssemblyReference.cache
 C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Uredi.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Komentiraj.resources
+C:\Users\Računalnik\Desktop\Projekt_zeleznik\Projekt_zeleznik\obj\Debug\Projekt_zeleznik.Uporabnik.resources

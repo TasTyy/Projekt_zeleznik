@@ -17,6 +17,7 @@ namespace Projekt_zeleznik
         public static string dariloID;
         public static string datum;
         public static string opis;
+        public static string uporabnikID;
         public static string uporabnik;
 
         public Main()
@@ -38,6 +39,7 @@ namespace Projekt_zeleznik
             {
                 comboBox2.Items.Add(reader.GetString(1));
             }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,6 +140,49 @@ namespace Projekt_zeleznik
 
             Uredi u = new Uredi();
             u.Show();
+        }
+
+        private void komentirajToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            conn.Open();
+
+            string query = "SELECT id_d FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "';";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            MySqlDataReader reader = comm.ExecuteReader();
+
+            while (reader.Read())
+            {
+                dariloID = reader.GetString(0);
+            }
+
+            Komentiraj k = new Komentiraj();
+            k.Show();
+        }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void uporabnikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            conn.Open();
+
+            string query = "SELECT u.id_u, u.upor_ime FROM darila INNER JOIN uporabniki u ON d.id_u = u.id_u WHERE id_d = '" + listView1.SelectedItems[0].Text + "';";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            MySqlDataReader reader = comm.ExecuteReader();
+
+            while (reader.Read())
+            {
+                uporabnikID = reader.GetString(0);
+                uporabnik = reader.GetString(1);
+            }
+
+        }
+
+        private void userLabel_Click(object sender, EventArgs e)
+        {
         }
     }
 }

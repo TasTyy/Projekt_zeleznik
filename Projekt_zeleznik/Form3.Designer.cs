@@ -39,13 +39,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Ibriši = new System.Windows.Forms.ToolStripMenuItem();
+            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Vrsta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Opis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Uporabnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.komentirajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.uporabnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +61,7 @@
             this.userLabel.Size = new System.Drawing.Size(58, 22);
             this.userLabel.TabIndex = 0;
             this.userLabel.Text = "label1";
+            this.userLabel.Click += new System.EventHandler(this.userLabel_Click);
             // 
             // button1
             // 
@@ -128,16 +132,26 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Ibriši,
-            this.urediToolStripMenuItem});
+            this.urediToolStripMenuItem,
+            this.komentirajToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.uporabnikToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 98);
             // 
             // Ibriši
             // 
             this.Ibriši.Name = "Ibriši";
-            this.Ibriši.Size = new System.Drawing.Size(104, 22);
+            this.Ibriši.Size = new System.Drawing.Size(180, 22);
             this.Ibriši.Text = "Izbriši";
             this.Ibriši.Click += new System.EventHandler(this.Ibriši_Click);
+            // 
+            // urediToolStripMenuItem
+            // 
+            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
+            this.urediToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.urediToolStripMenuItem.Text = "Uredi";
+            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
             // 
             // listView1
             // 
@@ -180,12 +194,24 @@
             this.Uporabnik.Text = "Uporabnik";
             this.Uporabnik.Width = 123;
             // 
-            // urediToolStripMenuItem
+            // komentirajToolStripMenuItem
             // 
-            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
-            this.urediToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.urediToolStripMenuItem.Text = "Uredi";
-            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
+            this.komentirajToolStripMenuItem.Name = "komentirajToolStripMenuItem";
+            this.komentirajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.komentirajToolStripMenuItem.Text = "Komentiraj";
+            this.komentirajToolStripMenuItem.Click += new System.EventHandler(this.komentirajToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            // 
+            // uporabnikToolStripMenuItem
+            // 
+            this.uporabnikToolStripMenuItem.Name = "uporabnikToolStripMenuItem";
+            this.uporabnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uporabnikToolStripMenuItem.Text = "Uporabnik";
+            this.uporabnikToolStripMenuItem.Click += new System.EventHandler(this.uporabnikToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -229,5 +255,8 @@
         private System.Windows.Forms.ColumnHeader Opis;
         private System.Windows.Forms.ColumnHeader Uporabnik;
         private System.Windows.Forms.ToolStripMenuItem urediToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem komentirajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem uporabnikToolStripMenuItem;
     }
 }
