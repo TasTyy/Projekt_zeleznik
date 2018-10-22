@@ -114,7 +114,12 @@ namespace Projekt_zeleznik
         {
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
-
+            string query1 = "DELETE from komentarji WHERE id_d = '" + listView1.SelectedItems[0].Text + "'";
+            MySqlCommand comm1 = new MySqlCommand(query1, conn);
+            comm1.ExecuteNonQuery();
+            string query2 = "DELETE from komentarji WHERE id_u = '" + listView1.SelectedItems[0].Text + "'";
+            MySqlCommand comm2 = new MySqlCommand(query2, conn);
+            comm2.ExecuteNonQuery();
             string query = "DELETE FROM darila WHERE id_d = '" + listView1.SelectedItems[0].Text + "'";
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.ExecuteNonQuery();
@@ -169,7 +174,7 @@ namespace Projekt_zeleznik
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
 
-            string query = "SELECT u.id_u, u.upor_ime FROM darila INNER JOIN uporabniki u ON d.id_u = u.id_u WHERE id_d = '" + listView1.SelectedItems[0].Text + "';";
+            string query = "SELECT d.id_u, u.upor_ime FROM darila d INNER JOIN uporabniki u ON d.id_u = u.id_u WHERE d.id_d = '" + listView1.SelectedItems[0].Text + "';";
             MySqlCommand comm = new MySqlCommand(query, conn);
             MySqlDataReader reader = comm.ExecuteReader();
 
@@ -178,6 +183,8 @@ namespace Projekt_zeleznik
                 uporabnikID = reader.GetString(0);
                 uporabnik = reader.GetString(1);
             }
+            Uporabnik u = new Uporabnik();
+            u.Show();
 
         }
 

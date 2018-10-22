@@ -24,8 +24,8 @@ namespace Projekt_zeleznik
         {
             MySqlConnection conn = new MySqlConnection(dbConnectionString);
             conn.Open();
-
-            string query = "UPDATE Darila SET datum = " + DateTime.Now.ToString() + ", opis = " + textBox3.Text + " WHERE id_d = " + Main.dariloID +";";
+            string datum = DateTime.Now.ToString();
+            string query = "UPDATE darila SET datum = '" +datum+ "', opis = '" + textBox3.Text + "' WHERE id_d = '" + Main.dariloID +"'";
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.ExecuteNonQuery();
 

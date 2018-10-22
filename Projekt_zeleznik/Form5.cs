@@ -55,6 +55,25 @@ namespace Projekt_zeleznik
             string query = "INSERT INTO komentarji (datum, komentar, id_u, id_d) VALUES ('" + DateTime.Now.ToString() + "', '" + textBox1.Text + "', '" + Prijava.userID + "', '" + Main.dariloID + "')";
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.ExecuteNonQuery();
+
+            //MySqlConnection conn = new MySqlConnection(dbConnectionString);
+            //conn.Open();
+            listView2.View = View.Details;
+            MySqlDataAdapter ada = new MySqlDataAdapter("SELECT k.komentar, u.upor_ime, k.datum FROM uporabniki u INNER JOIN komentarji k ON k.id_u = u.id_u INNER JOIN darila d ON k.id_d = d.id_d WHERE k.id_d = '" + Main.dariloID + "';", conn);
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+            listView2.Items.Clear();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["upor_ime"].ToString());
+                listitem.SubItems.Add(dr["komentar"].ToString());
+                listitem.SubItems.Add(dr["datum"].ToString());
+                listView2.Items.Add(listitem);
+            }
+
+            textBox1.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
